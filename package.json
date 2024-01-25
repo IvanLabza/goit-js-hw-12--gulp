@@ -1,6 +1,6 @@
 {
-  "name": "lemon__course",
-  "homepage": "https://IvanLabza.github.io/nameDirectory",
+  "name": "goit-js-hw-12--gulp",
+  "homepage": "https://IvanLabza.github.io/goit-js-hw-12--gulp",
   "version": "1.0.0",
   "description": "gulp-dev",
   "scripts": {
@@ -39,7 +39,13 @@
     "sass": "^1.63.4",
     "style-loader": "^3.3.3",
     "swiper": "^11.0.5",
-    "webpack-stream": "^7.0.0"
+    "webpack-stream": "^7.0.0",
+    "axios": "^1.6.5",
+    "glob": "^8.1.0",
+    "notiflix": "^3.2.6",
+    "izitoast": "^1.4.0",
+    "modern-normalize": "^2.0.0",
+    "simplelightbox": "^2.14.2"
   },
   "browserslist": [
     "last 5 version"
