@@ -1,0 +1,20 @@
+//default
+@import"./defalt/reset";
+@import "./defalt/vars";
+
+//mixins
+
+@import"./defalt/mixins";
+
+
+//component
+@import"./ui/body";
+@import "./component/head";
+@import "./component/hero";
+@import "./component/statistic";
+@import "./component/learn";
+@import "./component/about";
+@import "./component/swiper";
+@import "./component/questions";
+@import "./component/me";
+@import "./component/footer";

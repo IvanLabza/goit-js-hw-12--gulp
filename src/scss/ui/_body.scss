@@ -1,0 +1,23 @@
+.container {
+  max-width: 1440px;
+  padding: 0 15px;
+}
+
+.link {
+  border-radius: 33px;
+  background: linear-gradient(44deg, #cd10ff 15.75%, #9f06ff 84.63%);
+  display: inline-block;
+  color: $link-color;
+  font-family: $text-fonts;
+  font-weight: 700;
+}
+
+.wrapper {
+  max-width: 1700px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+body {
+}
