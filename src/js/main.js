@@ -54,8 +54,8 @@ export default function createGallery(photos) {
 
 
 let simpleLightBox = new SimpleLightbox(".gallery a");
-var query = "";
-var page = 1;
+let query = "";
+let page = 1;
 const perPage = 40;
 
 const searchFormEl = document.querySelector(".search-form");
@@ -131,21 +131,34 @@ function handleMoreBtnClick() {
   fetchPhotos(query, page, perPage)
     .then((data) => {
       const amountOfPages = Math.ceil(data.totalHits / perPage);
-      if (page === amountOfPages) {
+
+      if (page === amountOfPages || data.totalHits <= perPage) {
         loadMoreBtnEl.classList.add("is-hidden");
-        iziToast.warning({
-          title: "Warning",
-          message: "Sorry, there are no more photos.",
-          position: "topRight",
-          timeout: 3000,
-        });
+        if (amountOfPages === 1) {
+          iziToast.warning({
+            title: "Warning",
+            message:
+              "We're sorry, but you've reached the end of search results.",
+            position: "topRight",
+            timeout: 3000,
+          });
+        } else {
+          iziToast.warning({
+            title: "Warning",
+            message: "Sorry, there are no more photos.",
+            position: "topRight",
+            timeout: 3000,
+          });
+        }
       }
+
       galleryListEl.insertAdjacentHTML("beforeend", createGallery(data.hits));
       simpleLightBox.refresh();
       smoothScroll();
     })
     .catch(onFetchError);
 }
+
 
 searchFormEl.addEventListener("submit", handleSearchFormOnSubmit);
 loadMoreBtnEl.addEventListener("click", handleMoreBtnClick);
